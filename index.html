@@ -1,0 +1,630 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Unity Developer Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f1115;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            header h1 {
+                font-size: 48px;
+                margin-bottom: 20px;
+            }
+
+            header p {
+                color: #b0b0b0;
+                max-width: 700px;
+                margin: 0 auto;
+                font-size: 18px;
+            }
+
+        /* NAV */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 17, 21, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            border-bottom: 1px solid #2a2f3a;
+            z-index: 100;
+        }
+
+            nav ul {
+                display: flex;
+                justify-content: center;
+                gap: 25px;
+                list-style: none;
+            }
+
+            nav a {
+                color: #c7c7c7;
+                text-decoration: none;
+                padding: 10px 15px;
+                border-radius: 8px;
+                transition: 0.2s;
+            }
+
+                nav a:hover {
+                    background: #171a21;
+                    color: #fff;
+                }
+
+                nav a.active {
+                    background: #3a66ff;
+                    color: white;
+                }
+
+        /* SECTIONS */
+        section {
+            padding: 150px 0;
+            scroll-margin-top: 80px;
+        }
+
+        .section-box {
+            background-color: #171a21;
+            border-radius: 20px;
+            border: 1px solid #2a2f3a;
+            overflow: hidden;
+        }
+
+        .section-flex {
+            display: flex;
+            align-items: center;
+            gap: 0px;
+        }
+
+        .section-image {
+            flex: 1;
+            min-height: 350px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-content {
+            flex: 1;
+            padding: 50px;
+        }
+
+            .section-content h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .section-content p {
+                color: #c7c7c7;
+                font-size: 17px;
+            }
+
+        /* ABOUT */
+        .about {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            padding: 50px;
+        }
+
+            .about img {
+                width: 250px;
+                height: 250px;
+                border-radius: 15px;
+                object-fit: cover;
+            }
+
+            .about p {
+                color: #c7c7c7;
+            }
+
+        /* CONTACT */
+        .contact {
+            padding: 50px;
+            text-align: center;
+            color: #c7c7c7;
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #777;
+            border-top: 1px solid #2a2f3a;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 900px) {
+            .section-flex,
+            .about {
+                flex-direction: column;
+            }
+
+            .section-image {
+                width: 100%;
+                min-height: 250px;
+            }
+
+            .section-content {
+                padding: 35px;
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            .section-content h2 {
+                font-size: 28px;
+            }
+        }
+
+        .section-image {
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+            .section-image img {
+                transition: transform 0.35s ease, filter 0.35s ease;
+            }
+
+                .section-image img:hover {
+                    transform: scale(1.05);
+                    filter: brightness(1.05);
+                }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #f5f5f5;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #3a66ff;
+            margin: 15px auto 0;
+            border-radius: 10px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 20px;
+            background: #171a21;
+            border: 1px solid #2a2f3a;
+            border-radius: 12px;
+            color: #f5f5f5;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+
+        .contact-links a:hover {
+            transform: translateY(-3px);
+            background: #3a66ff;
+            border-color: #3a66ff;
+        }
+
+        .contact-links i {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#about" class="nav-link active">O mnie</a></li>
+            <li><a href="#games" class="nav-link">Gry</a></li>
+            <li><a href="#gameJams" class="nav-link">Game Jams</a></li>
+            <li><a href="#contact" class="nav-link">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <header>
+            <h1>Karol Kostyra</h1>
+            <p>Unity Developer</p>
+        </header>
+
+        <!-- ABOUT -->
+        <section id="about">
+
+            <h2 class="section-title">O mnie</h2>
+
+            <div class="section-box about">
+                <img src="images/aboutMe.png" />
+                <div>
+                    <p>
+                        Jestem Unity Developerem z ponad 5-letnim doświadczeniem w pracy nad komercyjnymi projektami PC, VR i mobile.
+                        Posiadam szeroki zakres kompetencji związanych z gameplayem, architekturą, optymalizacją oraz utrzymaniem projektów produkcyjnych w Unity 3D.
+                        Jednocześnie staram się aktywnie uczestniczyć także w procesie projektowania rozgrywki, analizie UI/UX oraz podejmowaniu decyzji dotyczących warstwy wizualnej.
+                        Gamedev jest dla mnie nie tylko pracą, ale również pasją, którą rozwijam przez udział w game jamach.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GAMES -->
+        <section id="games">
+
+            <h2 class="section-title">Gry</h2>
+
+            <div class="section-box">
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://store.steampowered.com/app/1887260/Timberman_VR/" target="_blank">
+                            <img src="images/timbermanVR.jpg" style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>Timberman VR</h2>
+                        <p>
+                            <ul>
+                                <li>Rozwój architektury projektu: dependency injection (Zenject), state machine, save/load system, addressables, pools/factories oraz data-driven system z wykorzystaniem ScriptableObjects</li>
+                                <li>Integracja i wsparcie wielu platform/headsetów VR (Meta Quest 2, Valve Index, HTC Vive Cosmos, Acer Windows Mixed Reality) wraz z dynamiczną obsługą bindingu i wyświetlania input icons</li>
+                                <li>Obsługa kontrolerów oraz interakcji ze światem i UI</li>
+                                <li>Projektowanie kluczowych mechanik gameplayowych: generowanie elementów, obsługa przedmiotów, combo, progresja</li>
+                                <li>Implementacja własnego systemu lokalizacji</li>
+                                <li>Profilowanie, optymalizacja oraz bug fixing</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://store.steampowered.com/app/1387500/Offroad_Mechanic_Simulator/" target="_blank">
+                            <img src="images/offroadMechanicSimulator.jpg" style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>Offroad Mechanic Simulator</h2>
+                        <p>
+                            <ul>
+                                <li>Rozwój systemu zabrudzeń pojazdów</li>
+                                <li>Implementacja mechanik warsztatowych i offroadowych</li>
+                                <li>System zapisu gry oraz integracja Steam Cloud wraz z walidacją i synchronizacją danych</li>
+                                <li>Optymalizacja pamięci, renderingu i systemów runtime (Paint3D optimization, render textures, async systems, texture optimization)</li>
+                                <li>Debugowanie, refaktoryzacja oraz stabilizacja kluczowych systemów gameplayowych</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://store.steampowered.com/app/1674900/Train_Yard_Builder/" target="_blank">
+                            <img src="images/trainYardBuilder.jpg" style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>Train Yard Builder</h2>
+                        <p>
+                            <ul>
+                                <li>Implementacja generycznego systemu zadań</li>
+                                <li>Projektowanie kluczowych systemów wspierających rozmieszczanie modeli i tworzenie makiet</li>
+                                <li>Rozwój narzędzi developerskich usprawniających pracę zespołu</li>
+                                <li>Wprowadzenie trybu Sandbox</li>
+                                <li>Migracja projektu z HDRP do URP</li>
+                                <li>Optymalizacja i utrzymanie projektu: debugging, refaktoryzacja, poprawa wydajności, integracja shaderów</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://store.steampowered.com/app/2103090/Campus_Life/" target="_blank">
+                            <img src="images/campusLife.jpg" style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>Campus Life</h2>
+                        <p>
+                            <ul>
+                                <li>Implementacja i utrzymanie kluczowych systemów: nawigacja w świecie 3D, interakcje, progresja gracza, zarządzanie czasem</li>
+                                <li>Współtworzenie systemów symulacji świata: cykl dnia i nocy, pogoda, dostępność aktywności i wydarzeń</li>
+                                <li>Integracja UI/UX</li>
+                                <li>Debugowanie i optymalizacja gry (rendering, NavMesh, UI, logika runtime)</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://store.steampowered.com/app/3555500/Salvage_Shop_Simulator/" target="_blank">
+                            <img src="images/salvageShopSimulator.jpg" style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>Salvage Shop Simulator</h2>
+                        <p>
+                            <ul>
+                                <li>Współtworzenie modularnej architektury projektu opartej o wzorce event-driven oraz command-based</li>
+                                <li>Implementacja głównych elementów rozgrywki: system aukcji, interakcji z przedmiotami, obsługa klientów</li>
+                                <li>Projektowanie i konfiguracja systemu AI NPC</li>
+                                <li>Przebudowa i unifikacja UI</li>
+                                <li>Wpływ na ekonomię i progresję</li>
+                                <li>Debugowanie, optymalizacja i utrzymanie projekt</li>
+</ul>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://store.steampowered.com/app/1273980/HeatWave/" target="_blank">
+                            <img src="images/heatWave.jpg" style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>HeatWave</h2>
+                        <p>
+                            <ul>
+                                <li>Implementacja systemu pracy kamery i reagowania na wydarzenia</li>
+                                <li>Obsługa akcji gracza w trakcie walki</li>
+                                <li>Rozbudowa istniejących systemów</li>
+                                <li>Rozwiązywanie problemów</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://www.nintendo.com/us/store/products/ludo-game-just-chill-out-switch/" target="_blank">
+                            <img src="images/justChillOut.jpg" style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>Just Chill Out! Ludo Game</h2>
+                        <p>
+                            <ul>
+                                <li>Rozbudowa istniejących systemów</li>
+                                <li>Naprawianie błędów i optymalizacja</li>
+                                <li>Dopracowywanie rozgrywki pod kątem UX</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- GAME JAMS -->
+        <section id="gameJams">
+
+            <h2 class="section-title">Game Jams</h2>
+
+            <div class="section-box">
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://globalgamejam.org/games/2024/dvd-project-blue-1" target="_blank">
+                            <img src="images/captainNeuron.png"
+                                 style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>
+                            KrakJam (2024)<br />
+                            Captain Neuron
+                        </h2>
+
+                        <p>
+                            <ul>
+                                <li>Design rozgrywki</li>
+                                <li>Obsługa inputu</li>
+                                <li>System generowania poziomów</li>
+                                <li>Naprawianie błędów</li><br />
+                            </ul>
+                        </p>
+
+                        <div class="links">
+                            <a href="https://www.youtube.com/watch?v=AnZ4uyHNnuk" style="color: #3a66ff;" target="_blank">▶ Trailer</a>
+                        </div>
+
+                        <div class="links">
+                            <a href="https://www.youtube.com/watch?v=BAcIwtdAbMo" style="color: #3a66ff;" target="_blank">🎮 Gameplay</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://deodorande.itch.io/lost-souls" target="_blank">
+                            <img src="images/lostSouls.png"
+                                 style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>
+                            Steelworks Jam II (2023)<br />
+                            Lost Souls
+                        </h2>
+
+                        <p>
+                            Systemy gameplayowe, AI, progression i architektura save systemów.
+                        </p>
+
+                        <div class="links">
+                            <a href="https://www.youtube.com/watch?v=PRzFjf7O8Tg" style="color: #3a66ff;" target="_blank">🎮 Gameplay</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section-flex">
+
+                    <div class="section-image">
+                        <a href="https://v3.globalgamejam.org/2022/games/soul-liberation-4" target="_blank">
+                            <img src="images/soulLiberation.jpg"
+                                 style="width:100%; height:350px; object-fit:contain; cursor:pointer;" />
+                        </a>
+                    </div>
+
+                    <div class="section-content">
+                        <h2>
+                            KrakJam (2022 Edycja Online)<br />
+                            Soul Liberation
+                        </h2>
+
+                        <p>
+                            Systemy gameplayowe, AI, progression i architektura save systemów.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+
+            <h2 class="section-title">Kontakt</h2>
+
+            <div class="section-box contact">
+
+                <div class="contact-links">
+
+                    <a href="mailto:karol.m.kostyra@gmail.com?subject=Kontakt%20Portfolio">
+                        <i class="fas fa-envelope"></i>
+                        karol.m.kostyra@gmail.com
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/karolkostyra/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        linkedin.com/in/karolkostyra
+                    </a>
+
+                    <a href="https://github.com/karolkostyra" target="_blank">
+                        <i class="fab fa-github"></i>
+                        github.com/karolkostyra
+                    </a>
+
+                    <a href="https://www.instagram.com/karol_kostyra/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        instagram.com/karol_kostyra
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            © 2026 — Unity Developer Portfolio
+        </footer>
+
+    </div>
+
+    <script>
+        const links = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        function setActiveLink(id) {
+            links.forEach(link => {
+                link.classList.toggle(
+                    'active',
+                    link.getAttribute('href') === '#' + id
+                );
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            let activeSection = null;
+            const triggerPoint = window.innerHeight / 2;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+
+                if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
+                    activeSection = section.id;
+                }
+            });
+
+            if (activeSection) {
+                setActiveLink(activeSection);
+            }
+        });
+    </script>
+
+</body>
+</html>
