@@ -54,43 +54,51 @@
         nav {
             position: sticky;
             top: 0;
+            padding-top: 20px;
+            z-index: 100;
+            height: 70px;
+            display: flex;
+            align-items: center;
             background: rgba(15, 17, 21, 0.9);
             backdrop-filter: blur(10px);
-            padding: 15px 0;
             border-bottom: 1px solid #2a2f3a;
-            z-index: 100;
         }
 
-            nav ul {
-                display: flex;
-                justify-content: center;
-                gap: 25px;
-                list-style: none;
-            }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            list-style: none;
+        }
 
-            ul {
-                padding-left: 20px;
-                line-height: 2;
-                margin-bottom: 20px;
-            }
+        ul {
+            padding-left: 20px;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
 
-            nav a {
-                color: #c7c7c7;
-                text-decoration: none;
-                padding: 10px 15px;
-                border-radius: 8px;
-                transition: 0.2s;
-            }
+        nav a {
+            color: #c7c7c7;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
 
-                nav a:hover {
-                    background: #171a21;
-                    color: #fff;
-                }
+        nav a:hover {
+            background: #3a66ff;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(58, 102, 255, 0.45);
+            transition: all 0.2s ease;
+        }
 
-                nav a.active {
-                    background: #3a66ff;
-                    color: white;
-                }
+        nav a.active {
+            background: #3a66ff;
+            color: white;
+        }
 
         /* SECTIONS */
         section {
@@ -124,15 +132,15 @@
             padding: 50px;
         }
 
-            .section-content h2 {
-                font-size: 36px;
-                margin-bottom: 20px;
-            }
+        .section-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
 
-            .section-content p {
-                color: #c7c7c7;
-                font-size: 17px;
-            }
+        .section-content p {
+            color: #c7c7c7;
+            font-size: 17px;
+        }
 
         /* ABOUT */
         .about {
@@ -142,16 +150,16 @@
             padding: 50px;
         }
 
-            .about img {
-                width: 250px;
-                height: 250px;
-                border-radius: 15px;
-                object-fit: cover;
-            }
+        .about img {
+            width: 250px;
+            height: 250px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
 
-            .about p {
-                color: #c7c7c7;
-            }
+        .about p {
+            color: #c7c7c7;
+        }
 
         /* CONTACT */
         .contact {
@@ -198,14 +206,14 @@
             border-radius: 20px;
         }
 
-            .section-image img {
-                transition: transform 0.35s ease, filter 0.35s ease;
-            }
+        .section-image img {
+            transition: transform 0.35s ease, filter 0.35s ease;
+        }
 
-                .section-image img:hover {
-                    transform: scale(1.05);
-                    filter: brightness(1.05);
-                }
+        .section-image img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
 
         .section-title {
             font-size: 42px;
@@ -322,10 +330,10 @@
                 <img src="images/aboutMe.png" />
                 <div>
                     <p>
-                        Jestem Unity Developerem z ponad 5-letnim doświadczeniem w pracy nad komercyjnymi projektami PC, VR i mobile.
-                        Posiadam szeroki zakres kompetencji związanych z gameplayem, architekturą, optymalizacją oraz utrzymaniem projektów produkcyjnych w Unity 3D.
-                        Jednocześnie staram się aktywnie uczestniczyć także w procesie projektowania rozgrywki, analizie UI/UX oraz podejmowaniu decyzji dotyczących warstwy wizualnej.
-                        Gamedev jest dla mnie nie tylko pracą, ale również pasją, którą rozwijam przez udział w game jamach.
+                        Jestem Unity Developerem z ponad 5-letnim doświadczeniem w pracy nad komercyjnymi projektami PC, VR oraz mobile.<br /><br />
+                        Specjalizuję się w gameplay engineeringu, architekturze systemów oraz optymalizacji i utrzymaniu projektów produkcyjnych w Unity 3D. Pracuję zarówno nad implementacją kluczowych mechanik, jak i projektowaniem skalowalnych rozwiązań systemowych.<br /><br />
+                        Biorę aktywny udział w procesie projektowania rozgrywki, analizie UX oraz podejmowaniu decyzji wpływających na doświadczenie gracza i warstwę wizualną projektu.<br /><br />
+                        Gamedev traktuję nie tylko jako pracę, ale również obszar rozwoju, który regularnie eksploruję m.in. poprzez udział w game jamach.
                     </p>
                 </div>
             </div>
@@ -348,16 +356,15 @@
 
                     <div class="section-content">
                         <h2>Timberman VR</h2>
-                        <p>
-                            <ul>
-                                <li>Rozwój architektury projektu: dependency injection (Zenject), state machine, save/load system, addressables, pools/factories oraz data-driven system z wykorzystaniem ScriptableObjects</li>
-                                <li>Integracja i wsparcie wielu platform/headsetów VR (Meta Quest 2, Valve Index, HTC Vive Cosmos, Acer Windows Mixed Reality) wraz z dynamiczną obsługą bindingu i wyświetlania input icons</li>
-                                <li>Obsługa kontrolerów oraz interakcji ze światem i UI</li>
-                                <li>Projektowanie kluczowych mechanik gameplayowych: generowanie elementów, obsługa przedmiotów, combo, progresja</li>
-                                <li>Implementacja własnego systemu lokalizacji</li>
-                                <li>Profilowanie, optymalizacja oraz bug fixing</li>
-                            </ul>
-                        </p>
+
+                        <ul>
+                            <li>Rozwój architektury projektu: dependency injection (Zenject), state machine, save/load system, addressables, pools/factories oraz data-driven system z wykorzystaniem ScriptableObjects</li>
+                            <li>Integracja i wsparcie wielu platform/headsetów VR (Meta Quest 2, Valve Index, HTC Vive Cosmos, Acer Windows Mixed Reality) wraz z dynamiczną obsługą bindingu i wyświetlania input icons</li>
+                            <li>Obsługa kontrolerów oraz interakcji ze światem i UI</li>
+                            <li>Projektowanie kluczowych mechanik gameplayowych: generowanie elementów, obsługa przedmiotów, combo, progresja</li>
+                            <li>Implementacja własnego systemu lokalizacji</li>
+                            <li>Profilowanie, optymalizacja oraz bug fixing</li>
+                        </ul>
 
                         <div class="game-links">
 
@@ -382,15 +389,14 @@
 
                     <div class="section-content">
                         <h2>Offroad Mechanic Simulator</h2>
-                        <p>
-                            <ul>
-                                <li>Rozwój systemu zabrudzeń pojazdów</li>
-                                <li>Implementacja mechanik warsztatowych i offroadowych</li>
-                                <li>System zapisu gry oraz integracja Steam Cloud wraz z walidacją i synchronizacją danych</li>
-                                <li>Optymalizacja pamięci, renderingu i systemów runtime (Paint3D optimization, render textures, async systems, texture optimization)</li>
-                                <li>Debugowanie, refaktoryzacja oraz stabilizacja kluczowych systemów gameplayowych</li>
-                            </ul>
-                        </p>
+
+                         <ul>
+                             <li>Implementacja mechanik warsztatowych i offroadowych</li>
+                             <li>Rozwój systemu zabrudzeń pojazdów</li>
+                             <li>System zapisu gry oraz integracja Steam Cloud wraz z walidacją i synchronizacją danych</li>
+                             <li>Optymalizacja pamięci, renderingu i systemów runtime (Paint3D optimization, render textures, async systems, texture optimization)</li>
+                             <li>Debugowanie, refaktoryzacja oraz stabilizacja kluczowych systemów gameplayowych</li>
+                         </ul>
 
                         <div class="game-links">
 
@@ -415,16 +421,15 @@
 
                     <div class="section-content">
                         <h2>Train Yard Builder</h2>
-                        <p>
-                            <ul>
-                                <li>Implementacja generycznego systemu zadań</li>
-                                <li>Projektowanie kluczowych systemów wspierających rozmieszczanie modeli i tworzenie makiet</li>
-                                <li>Rozwój narzędzi developerskich usprawniających pracę zespołu</li>
-                                <li>Wprowadzenie trybu Sandbox</li>
-                                <li>Migracja projektu z HDRP do URP</li>
-                                <li>Optymalizacja i utrzymanie projektu: debugging, refaktoryzacja, poprawa wydajności, integracja shaderów</li>
-                            </ul>
-                        </p>
+
+                        <ul>
+                            <li>Implementacja generycznego systemu zadań</li>
+                            <li>Projektowanie kluczowych systemów wspierających rozmieszczanie modeli i tworzenie makiet</li>
+                            <li>Rozwój narzędzi developerskich usprawniających pracę zespołu</li>
+                            <li>Wprowadzenie trybu Sandbox</li>
+                            <li>Migracja projektu z HDRP do URP</li>
+                            <li>Optymalizacja i utrzymanie projektu: debugging, refaktoryzacja, poprawa wydajności, integracja shaderów</li>
+                        </ul>
 
                         <div class="game-links">
 
@@ -449,14 +454,13 @@
 
                     <div class="section-content">
                         <h2>Campus Life</h2>
-                        <p>
-                            <ul>
-                                <li>Implementacja i utrzymanie kluczowych systemów: nawigacja w świecie 3D, interakcje, progresja gracza, zarządzanie czasem</li>
-                                <li>Współtworzenie systemów symulacji świata: cykl dnia i nocy, pogoda, dostępność aktywności i wydarzeń</li>
-                                <li>Integracja UI/UX</li>
-                                <li>Debugowanie i optymalizacja gry (rendering, NavMesh, UI, logika runtime)</li>
-                            </ul>
-                        </p>
+
+                        <ul>
+                            <li>Implementacja i utrzymanie kluczowych systemów: nawigacja w świecie 3D, interakcje, progresja gracza, zarządzanie czasem</li>
+                            <li>Współtworzenie systemów symulacji świata: cykl dnia i nocy, pogoda, dostępność aktywności i wydarzeń</li>
+                            <li>Integracja UI/UX</li>
+                            <li>Debugowanie i optymalizacja gry (rendering, NavMesh, UI, logika runtime)</li>
+                        </ul>
 
                         <div class="game-links">
 
@@ -481,16 +485,15 @@
 
                     <div class="section-content">
                         <h2>Salvage Shop Simulator</h2>
-                        <p>
-                            <ul>
-                                <li>Współtworzenie modularnej architektury projektu opartej o wzorce event-driven oraz command-based</li>
-                                <li>Implementacja głównych elementów rozgrywki: system aukcji, interakcji z przedmiotami, obsługa klientów</li>
-                                <li>Projektowanie i konfiguracja systemu AI NPC</li>
-                                <li>Przebudowa i unifikacja UI</li>
-                                <li>Wpływ na ekonomię i progresję</li>
-                                <li>Debugowanie, optymalizacja i utrzymanie projekt</li>
-                            </ul>
-                        </p>
+
+                        <ul>
+                            <li>Współtworzenie modularnej architektury projektu opartej o wzorce event-driven oraz command-based</li>
+                            <li>Implementacja głównych elementów rozgrywki: system aukcji, obsługa klientów, interakcja z przedmiotami, progresja gracza</li>
+                            <li>Projektowanie i konfiguracja systemu AI NPC</li>
+                            <li>Przebudowa i unifikacja UI</li>
+                            <li>Balans rozgrywki</li>
+                            <li>Debugowanie, optymalizacja i utrzymanie projektu</li>
+                        </ul>
 
                         <div class="game-links">
 
@@ -515,14 +518,13 @@
 
                     <div class="section-content">
                         <h2>HeatWave</h2>
-                        <p>
-                            <ul>
-                                <li>Implementacja systemu pracy kamery i reagowania na wydarzenia</li>
-                                <li>Obsługa akcji gracza w trakcie walki</li>
-                                <li>Rozbudowa istniejących systemów</li>
-                                <li>Rozwiązywanie problemów</li>
-                            </ul>
-                        </p>
+
+                        <ul>
+                            <li>Implementacja systemu pracy kamery i reagowania na wydarzenia</li>
+                            <li>Obsługa akcji gracza w trakcie walki</li>
+                            <li>Rozbudowa istniejących systemów</li>
+                            <li>Rozwiązywanie problemów</li>
+                        </ul>
 
                         <div class="game-links">
 
@@ -547,13 +549,12 @@
 
                     <div class="section-content">
                         <h2>Just Chill Out! Ludo Game</h2>
-                        <p>
-                            <ul>
-                                <li>Rozbudowa istniejących systemów</li>
-                                <li>Naprawianie błędów i optymalizacja</li>
-                                <li>Dopracowywanie rozgrywki pod kątem UX</li>
-                            </ul>
-                        </p>
+
+                        <ul>
+                            <li>Rozbudowa istniejących systemów</li>
+                            <li>Naprawianie błędów i optymalizacja</li>
+                            <li>Dopracowywanie rozgrywki pod kątem UX</li>
+                        </ul>
 
                         <div class="game-links">
 
@@ -593,18 +594,11 @@
                             Captain Neuron
                         </h2>
 
-                        <h3>
-                            GameJam: KrakJam (2024)<br />
-                            Miejsce: 8 z 71 zgłoszonych gier<br />
-                            Temat: Make Me Laugh
-                        </h3>
-
-                        <ul>
-                            <li>Design rozgrywki</li>
-                            <li>Obsługa inputu</li>
-                            <li>Implementacja jednej z głównych mechanik zręcznościowych i systemu generowania przeszkód</li>
-                            <li>Testy i naprawa błędów</li>
-                        </ul>
+                        <p>
+                            <b>GameJam:</b> KrakJam (2024)<br />
+                            <b>Miejsce:</b> 8 z 71 zgłoszonych gier<br />
+                            <b>Temat:</b> Make Me Laugh<br />
+                        </p>
 
                         <div class="game-links">
 
@@ -643,13 +637,13 @@
                             Lost Souls
                         </h2>
 
-                        <h3>
-                            GameJam: Steelworks Jam II (2023)<br />
-                            Miejsce: 2 z 22 zgłoszonych gier<br />
-                            Temat:<br />
+                        <p>
+                            <b>GameJam:</b> Steelworks Jam II (2023)<br />
+                            <b>Miejsce:</b> 2 z 22 zgłoszonych gier<br />
+                            <b>Temat:</b><br />
                             1. Słowiański demon opowiedział wam o codzienności swojej nietypowej pracy<br />
-                            2. Podczas dziadów stary duch opowiedział wam o swoim życiu i tragicznej śmierci
-                        </h3>
+                            2. Podczas dziadów stary duch opowiedział wam o swoim życiu i tragicznej śmierci<br />
+                        </p>
 
                         <div class="game-links">
 
@@ -683,11 +677,11 @@
                             Soul Liberation
                         </h2>
 
-                        <h3>
-                            GameJam: KrakJam Edycja Online (2022)<br />
-                            Miejsce: 22 z 36 zgłoszonych gier<br />
-                            Temat: Duality
-                        </h3>
+                        <p>
+                            <b>GameJam:</b> KrakJam Edycja Online (2022)<br />
+                            <b>Miejsce:</b> 22 z 36 zgłoszonych gier<br />
+                            <b>Temat:</b> Duality<br />
+                        </p>
 
                         <div class="game-links">
 
@@ -742,7 +736,7 @@
         </section>
 
         <footer>
-            © 2026 — Unity Developer Portfolio
+            © 2026 — Karol Kostyra Portfolio
         </footer>
 
     </div>
