@@ -1,0 +1,7 @@
+title: Karol Kostyra - Resume
+
+url: "https://karolkostyra.github.io"
+baseurl: "/karolkostyra.github.io"
+
+plugins:
+  - jekyll-sitemap
